@@ -23,13 +23,13 @@ describe('AppComponent', () => {
   it(`should have as title 'contacts-frontend'`, () => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.componentInstance;
-    expect(app.title).toEqual('contacts-frontend');
+    expect(app.title).toEqual('contact-frontend');
   });
 
   it('should render title', () => {
     const fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
     const compiled = fixture.nativeElement as HTMLElement;
-    expect(compiled.querySelector('.content span')?.textContent).toContain('contacts-frontend app is running!');
+    expect(compiled.querySelector('.content span')?.textContent).toContain('contact-frontend app is running!');
   });
 });

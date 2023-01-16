@@ -1,0 +1,9 @@
+<mat-card>
+  <ng-container *ngIf="contact">
+    <mat-card-title>{{contact.firstName}} {{contact.lastName}}</mat-card-title>
+    <mat-card-subtitle>Phone: {{contact.phone}}</mat-card-subtitle>
+  </ng-container>
+  <ng-container *ngIf="loading">
+    <mat-spinner/>
+  </ng-container>
+</mat-card>

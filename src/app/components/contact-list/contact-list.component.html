@@ -1,0 +1,10 @@
+<mat-list role="list">
+  <ng-container *ngIf="contacts">
+    <mat-list-item role="listitem" *ngFor="let contact of contacts">
+    <app-contact-item [contact]="contact"></app-contact-item>
+    </mat-list-item>
+  </ng-container>
+  <ng-container *ngIf="loading">
+    <mat-spinner></mat-spinner>
+  </ng-container>
+</mat-list>
