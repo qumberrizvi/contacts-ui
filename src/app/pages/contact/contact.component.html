@@ -2,6 +2,9 @@
   <ng-container *ngIf="contact">
     <mat-card-title>{{contact.firstName}} {{contact.lastName}}</mat-card-title>
     <mat-card-subtitle>Phone: {{contact.phone}}</mat-card-subtitle>
+    <mat-card-actions>
+      <button mat-button>Send Message</button>
+    </mat-card-actions>
   </ng-container>
   <ng-container *ngIf="loading">
     <mat-spinner/>
