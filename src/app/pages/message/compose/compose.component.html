@@ -1,20 +1,21 @@
-<mat-card>
+<mat-card *ngIf="contact">
   <mat-card-header>
     <mat-card-title>Send a message</mat-card-title>
-    <mat-card-subtitle>To +919695538821</mat-card-subtitle>
+    <mat-card-subtitle>To {{contact.firstName}} {{contact.lastName}} ({{contact.phone}})</mat-card-subtitle>
   </mat-card-header>
 
   <mat-card-content>
     <form [formGroup]="messageForm">
       <mat-form-field>
-        <textarea matInput formControlName="body">{{messageBody}}</textarea>
+        <textarea matInput formControlName="body"></textarea>
       </mat-form-field>
     </form>
   </mat-card-content>
   <mat-card-footer>
-    <mat-card-actions>
+    <mat-card-actions align="end">
       <button mat-flat-button color="secondary" routerLink="/contacts">Cancel</button>
       <button mat-flat-button color="primary" (click)="submit()">Send</button>
     </mat-card-actions>
   </mat-card-footer>
 </mat-card>
+<mat-spinner strokeWidth="2" diameter="50" *ngIf="loader"></mat-spinner>

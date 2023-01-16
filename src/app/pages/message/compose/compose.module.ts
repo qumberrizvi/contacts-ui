@@ -8,22 +8,24 @@ import {MatFormFieldModule} from '@angular/material/form-field';
 import {RouterLink} from '@angular/router';
 import {MatSnackBarModule} from '@angular/material/snack-bar';
 import {MatInputModule} from '@angular/material/input';
+import {MatProgressSpinnerModule} from "@angular/material/progress-spinner";
 
 
 @NgModule({
   declarations: [
     ComposeComponent
   ],
-  imports: [
-    CommonModule,
-    MatCardModule,
-    MatButtonModule,
-    ReactiveFormsModule,
-    MatFormFieldModule,
-    MatInputModule,
-    RouterLink,
-    MatSnackBarModule,
-  ]
+    imports: [
+        CommonModule,
+        MatCardModule,
+        MatButtonModule,
+        ReactiveFormsModule,
+        MatFormFieldModule,
+        MatInputModule,
+        RouterLink,
+        MatSnackBarModule,
+        MatProgressSpinnerModule,
+    ]
 })
 export class ComposeModule {
 }

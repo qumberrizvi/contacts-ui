@@ -9,6 +9,8 @@ import {HomeModule} from './pages/home/home.module';
 import {HttpClientModule} from "@angular/common/http";
 import {ContactModule} from "./pages/contact/contact.module";
 import {MessageModule} from './pages/message/message.module';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import {ContactsModule} from "./pages/contacts/contacts.module";
 
 @NgModule({
   declarations: [
@@ -23,6 +25,8 @@ import {MessageModule} from './pages/message/message.module';
     HomeModule,
     ContactModule,
     MessageModule,
+    NgbModule,
+    ContactsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

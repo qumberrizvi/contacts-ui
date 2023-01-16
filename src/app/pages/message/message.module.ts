@@ -1,9 +1,9 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-
 import { MessageRoutingModule } from './message-routing.module';
 import { ComposeModule } from './compose/compose.module';
 import {ServicesModule} from '../../services/services.module';
+import {ListModule} from "./list/list.module";
 
 
 @NgModule({
@@ -12,7 +12,8 @@ import {ServicesModule} from '../../services/services.module';
     CommonModule,
     ServicesModule,
     MessageRoutingModule,
-    ComposeModule
+    ComposeModule,
+    ListModule,
   ]
 })
 export class MessageModule { }

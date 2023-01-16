@@ -1,4 +1,4 @@
-<mat-card>
+<mat-card class="mt-4">
   <ng-container *ngIf="contact">
     <mat-card-header>
       <mat-card-title>{{contact.firstName}} {{contact.lastName}}</mat-card-title>
@@ -7,10 +7,10 @@
       <mat-card-subtitle>Phone: {{contact.phone}}</mat-card-subtitle>
     </mat-card-content>
     <mat-card-footer>
-      <mat-card-actions align="end" class="cursor-pointer">
+      <mat-card-actions align="end" class="cursor-pointer mx-2 my-2">
         <button
           mat-flat-button
-          routerLink="/message/compose/{{contact.id}}"
+          routerLink="/messages/compose/{{contact.id}}"
           color="primary"
         >
           Send Message
@@ -20,6 +20,6 @@
 
   </ng-container>
   <ng-container *ngIf="loading">
-    <mat-spinner/>
+    <mat-spinner strokeWidth="2" diameter="50"></mat-spinner>
   </ng-container>
 </mat-card>

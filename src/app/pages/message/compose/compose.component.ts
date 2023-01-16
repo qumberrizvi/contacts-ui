@@ -14,11 +14,10 @@ import {MatSnackBar} from '@angular/material/snack-bar';
 export class ComposeComponent implements OnInit {
   id!: string;
   contact!: Contact;
-
   messageForm!: FormGroup;
   otp!: number;
-
-  messageBody!: string;
+  loader = false;
+  private messageBody!: string;
 
   constructor(
     private readonly activatedRoute: ActivatedRoute,
@@ -40,18 +39,20 @@ export class ComposeComponent implements OnInit {
   private setup(): void {
     this.id = this.activatedRoute.snapshot.paramMap.get('id') || '';
     if (this.id) {
+      this.loader = true;
       this.contactService.findOne(this.id)
         .subscribe({
           next: contact => {
             this.contact = contact;
             this.generateOtp();
-          }
+          },
+          complete: () => this.loader = false,
         });
     }
   }
 
   generateOtp(): void {
-    this.otp = Math.floor(1000 + Math.random() * 9000);
+    this.otp = Math.floor(100000 + Math.random() * 900000);
     this.prepareForm();
   }
 
@@ -60,19 +61,22 @@ export class ComposeComponent implements OnInit {
     this.messageFormBuilder.group({
       'body': [this.messageBody, [Validators.required]],
     });
+    this.messageForm.setValue({
+      body: this.messageBody,
+    });
   }
 
   submit(): void {
     if (!this.messageForm.valid) return;
     this.messageService.create({
-      body: this.messageForm.get<string>('body') as unknown as string,
+      body: this.messageForm.get<string>('body')?.value || '',
       otp: this.otp,
       contactId: this.id,
     })
       .subscribe({
         next: () => this.snackBar.open('Message sent successfully!', 'OK'),
         error: () => this.snackBar.open('Something went wrong!', 'Oh'),
-        complete: () => this.router.navigate(['/']),
+        complete: () => this.router.navigate(['/contacts']),
       });
   }
 }
