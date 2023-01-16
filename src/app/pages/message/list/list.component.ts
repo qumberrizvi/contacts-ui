@@ -23,9 +23,8 @@ export class ListComponent implements OnInit {
         next: (messages) => this.messages = messages
       });
   }
-
-  formatDate(date: Date): string {
-    return date.toLocaleDateString("en-US", {
+  formatDate(date: Date | string): string {
+    return new Date(date).toLocaleDateString("en-US", {
       weekday: 'long',
       year: 'numeric',
       month: 'long',
