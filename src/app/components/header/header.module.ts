@@ -4,6 +4,7 @@ import { HeaderComponent } from './header.component';
 import {MatIconModule} from "@angular/material/icon";
 import {MatToolbarModule} from "@angular/material/toolbar";
 import {MatButtonModule} from "@angular/material/button";
+import {RouterLink} from "@angular/router";
 
 
 
@@ -18,7 +19,8 @@ import {MatButtonModule} from "@angular/material/button";
     CommonModule,
     MatIconModule,
     MatToolbarModule,
-    MatButtonModule
+    MatButtonModule,
+    RouterLink
   ]
 })
 export class HeaderModule { }
