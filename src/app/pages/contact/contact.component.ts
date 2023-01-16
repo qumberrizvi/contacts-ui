@@ -25,7 +25,6 @@ export class ContactComponent implements OnInit {
 
   private fetchContact(): void {
     this.id = this.activatedRoute.snapshot.paramMap.get('id');
-    console.log('id', this.id);
     if (this.id) {
       this.loading = true;
       this.contactService.findOne(this.id)

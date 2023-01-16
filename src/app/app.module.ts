@@ -8,6 +8,7 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {HomeModule} from './pages/home/home.module';
 import {HttpClientModule} from "@angular/common/http";
 import {ContactModule} from "./pages/contact/contact.module";
+import {MessageModule} from './pages/message/message.module';
 
 @NgModule({
   declarations: [
@@ -21,6 +22,7 @@ import {ContactModule} from "./pages/contact/contact.module";
     BrowserAnimationsModule,
     HomeModule,
     ContactModule,
+    MessageModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

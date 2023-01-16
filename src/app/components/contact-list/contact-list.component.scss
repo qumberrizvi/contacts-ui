@@ -1,3 +1,21 @@
 .spacer {
   flex: 1 1 auto;
 }
+
+.mat-mdc-progress-spinner {
+  margin: auto;
+  height: 50vh !important;
+}
+
+.mdc-list-item.mdc-list-item--with-one-line {
+  border-bottom: 1px solid #8080801c;
+}
+
+.mdc-list-item.mdc-list-item--with-one-line:last-child {
+  border-bottom: 0;
+}
+
+.mdc-list {
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px, rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;
+  width: 400px;
+}

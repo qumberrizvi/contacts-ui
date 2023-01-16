@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ContactListComponent } from './contact-list.component';
 import {HomeRoutingModule} from "../../pages/home/home-routing.module";
-import {ContactServiceModule} from "../../services/contact/contact-service.module";
+import {ServicesModule} from "../../services/services.module";
 import {MatListModule} from "@angular/material/list";
 import {ContactItemModule} from "../contact-item/contact-item.module";
 import {MatProgressSpinnerModule} from "@angular/material/progress-spinner";
@@ -18,7 +18,7 @@ import {MatProgressSpinnerModule} from "@angular/material/progress-spinner";
   ],
   imports: [
     CommonModule,
-    ContactServiceModule,
+    ServicesModule,
     HomeRoutingModule,
     MatListModule,
     ContactItemModule,
